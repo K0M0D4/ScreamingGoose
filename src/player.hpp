@@ -11,7 +11,7 @@ namespace cmt {
 
         void Jump();
 
-        bool CheckCollision(sf::RectangleShape& rect);
+        sf::RectangleShape& GetRect();
 
         void Render(sf::RenderWindow& target, sf::Time deltaTime);
 

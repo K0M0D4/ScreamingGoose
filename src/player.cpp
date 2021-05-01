@@ -12,13 +12,8 @@ namespace cmt {
         m_rect.move(0, -130);
     }
 
-    bool Player::CheckCollision(sf::RectangleShape& rect) {
-        if(m_rect.getPosition().x - m_rect.getGlobalBounds().width / 2 < rect.getPosition().x + rect.getGlobalBounds().width / 2 &&
-            m_rect.getPosition().x + m_rect.getGlobalBounds().width / 2 > rect.getPosition().x - rect.getGlobalBounds().width / 2 &&
-            m_rect.getPosition().y - m_rect.getGlobalBounds().height / 2 < rect.getPosition().y + rect.getGlobalBounds().height / 2 &&
-            m_rect.getPosition().y + m_rect.getGlobalBounds().height / 2 > rect.getPosition().y - rect.getGlobalBounds().height / 2)
-            return true;
-        return false;
+    sf::RectangleShape& Player::GetRect() {
+        return (sf::RectangleShape&)m_rect;
     }
 
     void Player::Render(sf::RenderWindow& target, sf::Time deltaTime) {

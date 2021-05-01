@@ -23,13 +23,10 @@ namespace cmt {
         bool m_prevJump = false;
 
         std::vector<Pipe> m_pipes;
-        std::vector<sf::RectangleShape> m_pointRects;
 
         uint32_t m_points = 0;
         sf::Text m_pointsT;
 
         std::string Process(sf::RenderWindow& window);
-
-        void ReSummonPipe(int i, int x = 2000);
     };
 }

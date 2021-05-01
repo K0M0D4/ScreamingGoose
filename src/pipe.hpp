@@ -5,16 +5,23 @@
 namespace cmt {
     class Pipe {
     public:
-        Pipe(sf::Texture* texture, sf::Vector2f pos = sf::Vector2f(0, 0));
+        Pipe(sf::Texture* texture, float posX = 0);
 
-        sf::RectangleShape& GetRect();
+        sf::RectangleShape& GetRectU();
+        sf::RectangleShape& GetRectD();
+        sf::RectangleShape& GetPointRect();
 
-        void SetUp(bool val = true);
+        bool CheckCollision(sf::RectangleShape& rect);
+        bool CheckPoint(sf::RectangleShape& rect);
+
+        void Move(sf::Vector2f move);
+
+        void ReSummon(int x = 2000);
 
         void Render(sf::RenderWindow& target);
         
     private:
-        sf::RectangleShape m_rect;
+        sf::RectangleShape m_rectU, m_rectD, m_pointRect;
 
     };
 }
