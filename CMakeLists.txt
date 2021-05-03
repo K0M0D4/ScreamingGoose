@@ -11,13 +11,15 @@ set(SOURCE_FILES
     src/pipe.cpp
     src/assets.cpp
     src/player.cpp
+    src/button.cpp
     src/splash_scene.cpp
     src/menu_scene.cpp
     src/game_scene.cpp
+    src/death_scene.cpp
 )
 
-add_executable(${PROJECT_NAME} ${SOURCE_FILES})
+add_executable(game ${SOURCE_FILES})
 
-target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-system sfml-window sfml-audio sfml-network)
+target_link_libraries(game sfml-graphics sfml-system sfml-window sfml-audio sfml-network)
 
 file(COPY res/ DESTINATION res/)

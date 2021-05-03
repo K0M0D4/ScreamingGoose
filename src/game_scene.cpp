@@ -1,6 +1,5 @@
 #include "game_scene.hpp"
 
-#include <iostream>
 #include <string>
 
 namespace cmt {
@@ -14,6 +13,8 @@ namespace cmt {
 
         m_pointsT.setFont(m_assets->GetFont("font"));
         m_pointsT.setCharacterSize(100);
+        m_pointsT.setOutlineThickness(3);
+        m_pointsT.setOutlineColor(sf::Color::Black);
 
         Pipe buf(&m_assets->GetTexture("pipe"));
 
@@ -21,8 +22,6 @@ namespace cmt {
             buf.ReSummon((i + 1) * 500 + 800);
             m_pipes.push_back(buf);
         }
-
-        Process(window);
     }
 
     std::string GameScene::Process(sf::RenderWindow& window) {
@@ -34,12 +33,12 @@ namespace cmt {
         }
 
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-            return "exit";
+            return "menu";
 
         window.draw(m_bg);
 
         for(auto& pipe : m_pipes) {
-            if(pipe.CheckCollision(m_player->GetRect()))
+            if(pipe.CheckCollision(m_player->GetCollider()))
                 return "death";
             if(pipe.CheckPoint(m_player->GetRect())) {
                 m_points++;

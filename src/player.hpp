@@ -12,10 +12,13 @@ namespace cmt {
         void Jump();
 
         sf::RectangleShape& GetRect();
+        sf::RectangleShape& GetCollider();
 
         void Render(sf::RenderWindow& target, sf::Time deltaTime);
 
     private:
-        sf::RectangleShape m_rect;
+        sf::RectangleShape m_rect, m_collider;
+
+        sf::Vector2f m_velocity = sf::Vector2f(0, 0);
     };
 }

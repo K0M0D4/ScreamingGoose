@@ -9,6 +9,7 @@ namespace cmt {
     class SplashScene : public Scene {
     public:
         SplashScene(AssetManager& assets, sf::RenderWindow& window);
+        std::string Process(sf::RenderWindow& window);
 
     private:
         AssetManager* m_assets;
@@ -16,7 +17,5 @@ namespace cmt {
         sf::RectangleShape m_bg;
 
         sf::Clock m_clock;
-
-        std::string Process(sf::RenderWindow& window);
     };
 }

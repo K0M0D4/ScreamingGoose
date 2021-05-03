@@ -1,0 +1,16 @@
+v0.0.3
+//DONE
+
+//TODO
+Show points on death
+Moving background in menu and death scene
+Add ground at bottom
+Transitions between scenes
+
+v0.0.2
+Better player movement
+Menu screen
+Death screen 
+
+v0.0.1
+First version of game, core things working

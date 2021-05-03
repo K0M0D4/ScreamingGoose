@@ -1,7 +1,5 @@
 #include "pipe.hpp"
 
-#include <iostream>
-
 namespace cmt {
     Pipe::Pipe(sf::Texture* texture, float posX) {
         m_rectD.setSize(sf::Vector2f(100, 700));
@@ -16,7 +14,7 @@ namespace cmt {
 
         ReSummon(posX);
 
-        m_pointRect.setSize(sf::Vector2f(10, 720));
+        m_pointRect.setSize(sf::Vector2f(1, 720));
         m_pointRect.setFillColor(sf::Color::Green);
         m_pointRect.setOrigin(m_pointRect.getGlobalBounds().width / 2, m_pointRect.getGlobalBounds().height / 2);
     }

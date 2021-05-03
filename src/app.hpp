@@ -5,6 +5,7 @@
 #include "splash_scene.hpp"
 #include "menu_scene.hpp"
 #include "game_scene.hpp"
+#include "death_scene.hpp"
 
 #include "pipe.hpp"
 #include "assets.hpp"

@@ -1,7 +1,5 @@
 #include "app.hpp"
 
-#include <iostream>
-
 namespace cmt {
     App::App(std::string name, sf::Vector2f windowSize) {
         m_window.create(sf::VideoMode(windowSize.x, windowSize.y), name, sf::Style::Titlebar | sf::Style::Close);
@@ -26,8 +24,7 @@ namespace cmt {
             } else if(state == "game") {
                 m_actualScene = new GameScene(m_assets, m_window);
             } else if(state == "death") {
-                std::cout << "death\n";
-                m_actualScene = new MenuScene(m_assets, m_window);
+                m_actualScene = new DeathScene(m_assets, m_window);
             } else if(state == "exit") {
                 m_window.close();
             }
