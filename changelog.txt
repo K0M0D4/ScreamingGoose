@@ -1,16 +1,24 @@
-v0.0.3
+v0.4
 //DONE
 
 //TODO
+Transitions between scenes
+Part of better graphics - new pipes textrure
+Top 10 and last local leaderboard
+
+v0.3.1 - 13.05.2021
 Show points on death
 Moving background in menu and death scene
 Add ground at bottom
-Transitions between scenes
 
-v0.0.2
+technical:
+Moved scene code to scenes directory
+Added possibility to transfer data between scenes
+
+v0.0.2 - 03.05.2021
 Better player movement
 Menu screen
 Death screen 
 
-v0.0.1
+v0.0.1 - 01.05.2021
 First version of game, core things working

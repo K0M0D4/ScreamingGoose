@@ -12,10 +12,10 @@ set(SOURCE_FILES
     src/assets.cpp
     src/player.cpp
     src/button.cpp
-    src/splash_scene.cpp
-    src/menu_scene.cpp
-    src/game_scene.cpp
-    src/death_scene.cpp
+    src/scenes/splash_scene.cpp
+    src/scenes/menu_scene.cpp
+    src/scenes/game_scene.cpp
+    src/scenes/death_scene.cpp
 )
 
 add_executable(game ${SOURCE_FILES})

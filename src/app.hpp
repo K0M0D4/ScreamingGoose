@@ -2,10 +2,10 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "splash_scene.hpp"
-#include "menu_scene.hpp"
-#include "game_scene.hpp"
-#include "death_scene.hpp"
+#include "scenes/include/splash_scene.hpp"
+#include "scenes/include/menu_scene.hpp"
+#include "scenes/include/game_scene.hpp"
+#include "scenes/include/death_scene.hpp"
 
 #include "pipe.hpp"
 #include "assets.hpp"
@@ -20,6 +20,8 @@ namespace cmt {
     private:
         sf::RenderWindow m_window;
         AssetManager m_assets;
+
+        sf::Clock delta;
 
         Scene* m_actualScene;
 

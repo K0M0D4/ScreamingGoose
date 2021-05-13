@@ -71,7 +71,5 @@ namespace cmt {
     void Pipe::Render(sf::RenderWindow& target) {
         target.draw(m_rectD);
         target.draw(m_rectU);
-
-        target.draw(m_pointRect);
     }
 }

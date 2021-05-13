@@ -18,18 +18,35 @@ namespace cmt {
 
             m_window.clear(sf::Color(0, 200, 250));
 
-            std::string state = m_actualScene->Process(m_window);
-            if(state == "menu") {
-                m_actualScene = new MenuScene(m_assets, m_window);
-            } else if(state == "game") {
-                m_actualScene = new GameScene(m_assets, m_window);
-            } else if(state == "death") {
-                m_actualScene = new DeathScene(m_assets, m_window);
-            } else if(state == "exit") {
+            sf::Packet state = m_actualScene->Process(m_window);
+            std::string retStr;
+            state >> retStr;
+            if(retStr == "menu") {
+                float bgData[3];
+                state >> bgData[0] >> bgData[1] >> bgData[2];
+                sf::Packet packet;
+                packet << bgData[0] << bgData[1] << bgData[2];
+                m_actualScene = new MenuScene(m_assets, m_window, packet);
+            } else if(retStr == "game") {
+                float bgData[3];
+                state >> bgData[0] >> bgData[1] >> bgData[2];
+                sf::Packet packet;
+                packet << bgData[0] << bgData[1] << bgData[2];
+                m_actualScene = new GameScene(m_assets, m_window, packet);
+            } else if(retStr == "death") {
+                int points;
+                float bgData[3];
+                state >> points >> bgData[0] >> bgData[1] >> bgData[2];
+                sf::Packet packet;
+                packet << points << bgData[0] << bgData[1] << bgData[2];
+                m_actualScene = new DeathScene(m_assets, m_window, packet);
+            } else if(retStr == "exit") {
                 m_window.close();
             }
 
             m_window.display();
+
+            delta.restart();
         }
     }
 }

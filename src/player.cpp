@@ -37,6 +37,8 @@ namespace cmt {
 
         if(m_rect.getPosition().y < 0)
             m_rect.setPosition(m_rect.getPosition().x, 0);
+        if(m_rect.getPosition().y > 635)
+            m_rect.setPosition(m_rect.getPosition().x, 635);
 
         m_collider.setPosition(m_rect.getPosition());
 
